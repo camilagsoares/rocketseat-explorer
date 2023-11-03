@@ -25,7 +25,7 @@ isHuman = true
 // console.log(`O ${names} tem ${age} anos`)
 
 
- /*                       OBJETOS                     */
+/*                       OBJETOS                     */
 const person = {
     name: 'Mayk',
     age: 30,
@@ -36,34 +36,48 @@ const person = {
 // console.log(person.name) // acessando o name do objeto person
 
 
- /*                       ARRAY                     */
+/*                       ARRAY                     */
 
- const animals = ['lion', 'cat', 'monkey', {
-    name: 'cat',age: 3
- }]
+const animals = ['lion', 'cat', 'monkey', {
+    name: 'cat', age: 3
+}]
 //  console.log(animals[3].name)
 //  console.log(animals.length)
 //length mostra o tamanho do array
 
-let weight;
+// let weight;
 // console.log(typeof weight)
 
-let name = "Camila";
-let age = 23
-let stars = 23.7
-let isSubscribed = true
+// let name = "Camila";
+// let age = 23
+// let stars = 23.7
+// let isSubscribed = true
 
 //float é um numero quebrado
 
 
-// let students = {
-//     name: 'Camila',
-//     age: 23,
-//     isStudent: true,
-//     weight: 53
-// };
+let student = {
+    name: 'Camila',
+    age: 23,
+    isStudent: true,
+    weight: 53
+};
+
+const aluno = {
+    name: 'Joao',
+    age: 21,
+    isStudent: true,
+    weight: 78
+}
+// students = [aluno]
+
+let students = [];
+students = [student]
+students[1] = aluno
+console.log(students[0])
+
+// console.log(students[0])
+
 // console.log(students.name)
 
 // console.log(`${students.name} de idade ${students.age} pesa ${students.weight} kg.`)
-
-let students = [];
