@@ -24,9 +24,8 @@ clima = "frio" //atribuindo um novo valor
 let y = 1;
 {
      y = 0;
-    console.log('existe y?', y)
+    // console.log('existe y?', y)
 
 }
-console.log('existe y depois do bloco?', y) // nao
-
+// console.log('existe y depois do bloco?', y) // nao
 
