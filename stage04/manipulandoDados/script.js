@@ -25,4 +25,15 @@ let myArray = phrase.split(" ")
 // console.log(myArray)
 
 let fraseComTraco = myArray.join("_")
-console.log(fraseComTraco)
+// console.log(fraseComTraco)
+
+let frase = "Eu quero viver"
+// console.log(frase.includes("viver"))
+
+
+// CRIAR ARRAY COM CONSTRUTOR
+// let myArrayLetras = ['a','b','c']
+
+// console.log(myArrayLetras)
+let myArrayLetras = new Array('a','b','c')
+console.log(myArrayLetras)
