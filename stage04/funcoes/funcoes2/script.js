@@ -19,6 +19,30 @@ function fazerSuco(fruta1,fruta2) {
 }
 
 const copo = fazerSuco('banana', 'maca')
-console.log(copo)
+// console.log(copo)
 
 
+
+
+let subject = 'create video'
+
+function createThink(subject) {
+    subject = 'study'
+    return subject;
+}
+// console.log(subject)
+// console.log(createThink(subject))
+
+// sayMayName();
+
+// function sayMayName() {
+//     // console.log("Camila")
+// }
+
+
+//  ---------------------- ARROW FUNCTION ----------------------
+const sayMayName = () => {
+    console.log("camila")
+}
+
+sayMayName();
