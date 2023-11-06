@@ -36,4 +36,13 @@ let frase = "Eu quero viver"
 
 // console.log(myArrayLetras)
 let myArrayLetras = new Array('a','b','c')
-console.log(myArrayLetras)
+// console.log(myArrayLetras)
+
+
+//CONTAR ELEMENTOS DE UM ARRAY
+// console.log(["a","b","c"])
+
+//Transformar string(os caracteres) em elementos de um array
+let wordEmArray = "manipulacao"
+console.log(wordEmArray)
+console.log(Array.from(wordEmArray))
