@@ -44,5 +44,20 @@ let myArrayLetras = new Array('a','b','c')
 
 //Transformar string(os caracteres) em elementos de um array
 let wordEmArray = "manipulacao"
-console.log(wordEmArray)
-console.log(Array.from(wordEmArray))
+// console.log(wordEmArray)
+// console.log(Array.from(wordEmArray))
+
+//MANIPULANDO ARRAY
+let techs = ["html", "css", "js"]
+/* Adicionar um item no fim */ techs.push("Node.js")
+/* Adicionar um item no começo */ techs.unshift("Sass")
+/* Remover do final*/ techs.pop()
+/* Remover do começo */ techs.shift()
+// /* Pegar somente */ console.log(techs.slice(1,3)) 
+//o slice nao ta modificando o array e sim retornando oq to pedindo
+//primeiro argumento é a posição de inicio que quero retirar,segundo argumento é qual a posicao final
+
+/* Adicionar um item no começo */ techs.unshift("Sass")
+
+
+// console.log(techs)
