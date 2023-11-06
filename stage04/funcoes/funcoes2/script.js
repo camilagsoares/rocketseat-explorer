@@ -14,7 +14,7 @@ let number2 = 25
 // console.log(`O numero 2 eh ${number2}`)
 // console.log(`A soma é ${sum(number1, number2)}`)
 
-function fazerSuco(fruta1,fruta2) { 
+function fazerSuco(fruta1, fruta2) {
     return fruta1 + fruta2;
 }
 
@@ -41,8 +41,22 @@ function createThink(subject) {
 
 
 //  ---------------------- ARROW FUNCTION ----------------------
-const sayMayName = () => {
-    console.log("camila")
-}
+// const sayMayName = (name) => {
+//     console.log(name)
+// }
 
-sayMayName();
+// sayMayName("camila!");
+
+
+// ------------------------ CALLBACK FUNCTION -----------------------
+// function sayMayName(name) {
+//     console.log("Antes de executar a função callback")
+//     name()
+//     console.log("Depois de executar a função callback")
+// }
+
+// sayMayName(() => {
+//     console.log("Estou em uma callback")
+// })
+
+/* Uma callback é basicamente passar uma função como parâmetro de outra função */
