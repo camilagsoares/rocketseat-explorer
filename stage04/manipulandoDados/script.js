@@ -58,6 +58,8 @@ let techs = ["html", "css", "js"]
 //primeiro argumento é a posição de inicio que quero retirar,segundo argumento é qual a posicao final
 
 /* Adicionar um item no começo */ techs.unshift("Sass")
+/*Encontrar a posição de um elemento */
+console.log(techs.indexOf('css'))
 
 
 // console.log(techs)
