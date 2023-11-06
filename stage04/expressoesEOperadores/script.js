@@ -57,3 +57,6 @@ let increment = 0
 increment++
 console.log(increment)
 
+
+//exponencial
+console.log( 3 ** 3)
