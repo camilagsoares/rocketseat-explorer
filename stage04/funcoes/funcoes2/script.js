@@ -60,3 +60,17 @@ function createThink(subject) {
 // })
 
 /* Uma callback é basicamente passar uma função como parâmetro de outra função */
+
+// -----------------------FUNCTION CONSTRUCTOR ---------------------------
+
+//cria um novo objeto
+//acessa com o this
+function Person(name) { 
+    this.name = name
+    this.walk = function (){
+        return this.name + ' está andando'
+    }
+}
+
+const camila = new Person("Camila")
+console.log(camila.walk())
