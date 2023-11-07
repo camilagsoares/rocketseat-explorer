@@ -50,13 +50,56 @@ delete person.age
 // console.log(4 - 4)
 
 //resto da divisao
-console.log(11 % 3)
+// console.log(11 % 3)
 
 //incremento
 let increment = 0
 increment++
-console.log(increment)
+// console.log(increment)
 
 
 //exponencial
-console.log( 3 ** 3)
+// console.log( 3 ** 3)
+
+let one = 1
+let two = 2
+// console.log(one == 1)
+// console.log(one == "1")
+
+// OPERADORES DE COMPARAÇÃO ESTRITAMENTE IGUAL E DIFERENTE
+/* COMPARA OS VALORES E O TIPO */
+// console.log(one === 1)
+// console.log(one === "1")
+
+let x;
+
+
+x = 1
+// console.log(x) // esta atribuindo para o x o valor de 1,ou seja a variável x recebe o valor de 1
+
+x += 2 // x = x + 2
+// console.log(x)
+
+//OPERADORES LÓGICOS
+/*
+&& e
+|| ou
+! not
+*/
+
+
+// console.log(!pao)
+
+
+//TERNARIO
+//condicao ? valor1 : valor2
+let pao = true;
+let queijo = true;
+const niceBreakfest = pao && queijo ? 'cafe top' : 'cafe ruim'
+// console.log(niceBreakfest)
+
+let idade = 16;
+const canDrive = idade >= 18 ? 'pode dirigir' : 'nao pode'
+// console.log(canDrive)
+
+console.log('a' + 'a')
