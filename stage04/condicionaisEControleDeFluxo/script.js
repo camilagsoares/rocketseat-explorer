@@ -72,3 +72,5 @@ try {
 } catch(e) {  //catch captura o erro
     console.log(e)
 }
+
+console.log("apos o erro")
