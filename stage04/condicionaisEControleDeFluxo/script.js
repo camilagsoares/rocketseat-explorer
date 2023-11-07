@@ -47,4 +47,28 @@ function calculate(number1, operator, number2) {
 
 }
 
-console.log(calculate(3,'+',5))
+// console.log(calculate(3,'+',5))
+
+
+
+
+
+
+
+/* throw  - Significa disparar/lançar */
+
+function sayMyName(name = '') {
+    if (name === '') {
+        throw "Nome é obrigatorio"
+    }
+    console.log("Depois do erro")
+}
+
+
+/* try...catch */
+
+try { 
+    sayMyName()
+} catch(e) {  //catch captura o erro
+    console.log(e)
+}
