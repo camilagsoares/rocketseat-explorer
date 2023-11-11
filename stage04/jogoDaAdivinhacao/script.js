@@ -10,18 +10,12 @@ while (Number(numeroDigitado) != numeroAleatorio) {
     tentativas++;
 }
 
-alert("Parabéns,você adivinhou o número em " + tentativas + " tentativas!")
-
-
-let result = prompt("Adivinhe um número de 0 a 10");
-const randomNumber = Math.round(Math.random() * 10);
-
-let xAttempts = 1;
-
-while (Number(result) != randomNumber) {
-    result = prompt("Erro,tente novamente");
-    xAttempts++;
+let palavra;
+if(tentativas > 2){
+    palavra = "tentativas"
+} else {
+    palavra =  "tentativa"
 }
 
-alert("Parabens,voce acertou em" + xAttempts + "tentativas")
+alert("Parabéns,você adivinhou o número em " + tentativas + palavra)
 
