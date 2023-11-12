@@ -14,7 +14,7 @@ while (respostaUsuario != 3) {
 
 
     if (respostaUsuario == 1) {
-        let item = prompt("Digite o nome do item")
+        let item = prompt("Digite o nome do item");
         items.push(item)
         // items[index] = prompt("Digite o nome do item")
         // index++;
