@@ -43,5 +43,6 @@ let listPacients = [];
 
 
 for(patient of pacients){
-    listPacients.push(patient.name)
+    listPacients.push(patient.name,patient.age,patient.weight)
+    alert(listPacients)
 }
