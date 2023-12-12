@@ -50,6 +50,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin: 2.5rem 0;
 }
 
 header h1 {
@@ -83,8 +84,10 @@ header h1 {
     filter: brightness(1.1);
 }
 
-table{
+table {
     width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 1rem 2rem -1rem rgba(0,0,0,0.3);
 }
 
 table * {
@@ -92,13 +95,61 @@ table * {
     color: var(--text-color)
 }
 
-table th{
 
+
+table th {
+    background: var(--primary-color);
+    text-align: left;
+    font-weight: normal;
+    padding: 1.5rem;
 }
 
-td.user img{
+table th:first-child {
+    border-top-left-radius: .4rem;
+}
+
+table th:last-child {
+    border-top-right-radius: .4rem;
+}
+
+table tr {
+    background: #eee;
+}
+
+table tr:nth-child(odd) {
+    background: #ddd;
+}
+
+table td {
+    padding: 1.5rem;
+    text-align: left;
+}
+
+td.user {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+td.user a{
+    text-decoration: none;
+}
+
+td.user a p {
+    font-weight: bold;
+}
+
+
+td.user img {
     width: 5rem;
     height: 5rem;
     object-fit: cover;
     border-radius: 50%;
+}
+
+td .remove{
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: red;
 }
