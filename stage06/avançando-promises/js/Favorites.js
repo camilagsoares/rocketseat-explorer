@@ -10,7 +10,7 @@ export class GithubUser {
         public_repos,
         followers,
       }))
-      .catch( e => console.log('encontrei erro',e))
+      .catch((e) => console.log("encontrei erro", e));
   }
 }
 
@@ -26,6 +26,10 @@ export class Favorites {
     this.entries = JSON.parse(localStorage.getItem("@github-favorites:")) || [];
   }
 
+  save() {
+    localStorage.setItem("@github-favorites:", JSON.stringify(this.entries));
+  }
+
   async add(username) {
     try {
       const user = await GithubUser.search(username);
@@ -34,11 +38,12 @@ export class Favorites {
         throw new Error("Usuário não encontrado");
       }
 
-      this.entries = [user,...this.entries]
-      this.update()
+      this.entries = [user, ...this.entries];
+      this.update();
+      this.save();
 
     } catch (error) {
-        alert(error.message);
+      alert(error.message);
     }
   }
 
@@ -49,6 +54,7 @@ export class Favorites {
 
     this.entries = filteredEntries;
     this.update();
+    this.save()
   }
 }
 
