@@ -10,12 +10,15 @@ app.use(json())
 // request - requisicao que o backend faz baseado nas regras que eu criar
 // response - resposta que envio para o cliente
 
-app.get("/message/:id", (request, response) => {
+app.get("/message/:id/:user", (request, response) => {
     // outra forma de fazer: const { params } = request;
    
-    const id  = Number(request.params.id)
+    const { id , user}  = request.params
 
-    response.send(`Id da mensagem ${id}`)
+    response.send(`Id da mensagem ${id}
+    
+    Usuario ${user}
+    `)
 });
 
 app.listen(PORT, () => console.log(`Server is running ${PORT}`));
