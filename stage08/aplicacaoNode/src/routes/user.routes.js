@@ -1,4 +1,5 @@
 import { Router } from "express";
+import UsersController from "../controllers/UsersController.js";
 
 const usersRoutes = Router();
 
@@ -18,9 +19,7 @@ usersRoutes.get("/message/:id/:user", (request, response) => {
 });
 
 usersRoutes.post("/", async (request, response) => {
-    const {name,email,password} = request.body;
-
-    response.json({name,email,password})
+    
 })
 
 export default usersRoutes;
