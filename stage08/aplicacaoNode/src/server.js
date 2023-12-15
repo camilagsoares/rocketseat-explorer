@@ -17,16 +17,14 @@ app.get("/message/:id/:user", (request, response) => {
 
     response.send(`Id da mensagem ${id}
     
-    Usuario ${user}  
+    Usuario ${user}
     `)
 });
 
-//QUERY PARAMS
-//http://localhost:3000/users?page=5&limit=10
-app.get("/users", (request,response) => {
-    const { page,limit } = request.query;
+app.post("/users", async (request, response) => {
+    const {name,email,password} = request.body;
 
-    response.send(`Página ${page}. Limite ${limit}`)
+    response.send(`Usuario ${name}, ${email}, ${password}`)
 })
 
 app.listen(PORT, () => console.log(`Server is running ${PORT}`));
