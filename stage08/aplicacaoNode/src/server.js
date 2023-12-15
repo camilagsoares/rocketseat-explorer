@@ -24,7 +24,7 @@ app.get("/message/:id/:user", (request, response) => {
 app.post("/users", async (request, response) => {
     const {name,email,password} = request.body;
 
-    response.send(`Usuario ${name}, ${email}, ${password}`)
+    response.json({name,email,password})
 })
 
 app.listen(PORT, () => console.log(`Server is running ${PORT}`));
