@@ -4,25 +4,23 @@ import UsersController from "../controllers/UsersController.js";
 const usersRoutes = Router();
 
 
+function myMiddleware(request, response, next) {
+    console.log("Você passou pelo middleware");
+
+    if (!request.body.isAdmin) {
+        return response.json({ message: "user unauthorized" });
+    }
+    next();
+}
+
+
+
+
+
+
 const usersController = new UsersController()
 
-
-
-// express ajuda a gerenciar as requisições HTTP
-// request - requisicao que o backend faz baseado nas regras que eu criar
-// response - resposta que envio para o cliente
-
-// usersRoutes.get("/message/:id/:user", (request, response) => {
-//     // outra forma de fazer: const { params } = request;
-//     const { id , user}  = request.params
-
-//     response.send(`Id da mensagem ${id}
-
-//     Usuario ${user}
-//     `)
-// });
-
-usersRoutes.post("/", usersController.create);
+usersRoutes.post("/", myMiddleware, usersController.create);
 
 export default usersRoutes;
 
