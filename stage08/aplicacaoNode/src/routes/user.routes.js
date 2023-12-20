@@ -4,23 +4,25 @@ import UsersController from "../controllers/UsersController.js";
 const usersRoutes = Router();
 
 
+const usersController = new UsersController()
+
+
+
 // express ajuda a gerenciar as requisições HTTP
 // request - requisicao que o backend faz baseado nas regras que eu criar
 // response - resposta que envio para o cliente
 
-usersRoutes.get("/message/:id/:user", (request, response) => {
-    // outra forma de fazer: const { params } = request;
-    const { id , user}  = request.params
+// usersRoutes.get("/message/:id/:user", (request, response) => {
+//     // outra forma de fazer: const { params } = request;
+//     const { id , user}  = request.params
 
-    response.send(`Id da mensagem ${id}
-    
-    Usuario ${user}
-    `)
-});
+//     response.send(`Id da mensagem ${id}
 
-usersRoutes.post("/", async (request, response) => {
-    
-})
+//     Usuario ${user}
+//     `)
+// });
+
+usersRoutes.post("/", usersController.create);
 
 export default usersRoutes;
 
