@@ -1,5 +1,7 @@
-import { Router } from "express";
-import UsersController from "../controllers/UsersController.js";
+const { Router } = require('express')
+
+const UsersController = require('../controllers/UsersController')
+
 
 const usersRoutes = Router();
 
@@ -8,6 +10,6 @@ const usersController = new UsersController()
 
 usersRoutes.post("/", usersController.create);
 
-export default usersRoutes;
+module.exports = usersRoutes;
 
 //exportando pra quem quiser usar o arquivo
