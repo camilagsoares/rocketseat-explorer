@@ -60,7 +60,7 @@ class NotesController {
     async index(request, response) {
         const { user_id } = request.query;
         const notes = await knex("notes")
-        .where({ user_id })
+        .where({ user_id });
     }
 }
 
