@@ -1,15 +1,15 @@
 import './styles.js';
 import { Button } from '../../components/Button/index.jsx';
+import { Container } from './styles'
+import { Header } from '../../components/Header/index.jsx';
 
 function Details() {
 
   return (
-    <div>
-      Hello
-      <Button title="Entrar" />
-      <Button title="Cadastrar" />
-      <Button title="Sair" />
-    </div>
+    <Container>
+      <Header />
+      <Button title="Voltar" />
+    </Container>
   )
 
 }
