@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import backgroundImg from '../../assets/background.png';
 
 export const Container = styled.div`
 height: 100vh;
@@ -34,4 +35,10 @@ text-align: center;
    margin-top: 124px;
    color: ${({ theme }) => theme.COLORS.ORANGE};
  }
-`
+`;
+
+export const Background = styled.div`
+flex: 1; //ocupa todo espaço que está disponível
+background: url(${backgroundImg}) no-repeat center center;
+background-size: cover;
+`;
