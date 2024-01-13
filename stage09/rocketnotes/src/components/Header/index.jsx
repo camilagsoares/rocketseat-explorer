@@ -1,5 +1,5 @@
 import { Container, Profile, Logout } from "./styles";
-// import { RiShutDownLine } from 'react-icons/ri'
+import { RiShutDownLine } from 'react-icons/ri'
 
 export function Header() {
     return (
@@ -14,8 +14,7 @@ export function Header() {
             </Profile>
 
             <Logout>
-                {/* <RiShutDownLine /> */}
-                icone
+                <RiShutDownLine />
             </Logout>
         </Container>
     );
