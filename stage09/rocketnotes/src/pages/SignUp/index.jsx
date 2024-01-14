@@ -2,6 +2,7 @@ import { Container, Form, Background } from "./styles";
 import { Input } from "../../components/Input";
 import { FiUser, FiMail, FiLock } from 'react-icons/fi';
 import { Button } from "../../components/Button";
+import { Link } from 'react-router-dom';
 
 function SignUp() {
 
@@ -35,7 +36,7 @@ function SignUp() {
 
                 <Button title="Cadastrar" />
 
-                <a href="#">Voltar para o login</a>
+                <Link to="/">Voltar para o login</Link>
             </Form>
 
         </Container>
