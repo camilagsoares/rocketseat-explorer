@@ -12,5 +12,4 @@ grid-template-areas: "header" "content";
 export const Form = styled.form`
 
 
-
 `
