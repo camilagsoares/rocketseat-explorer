@@ -23,7 +23,9 @@ function New() {
                     <Textarea  placeholder="Observações" />
 
                     <Section title="Links úteis">
-                        <NoteItem />
+                        <NoteItem value="https://rocketseat.com.br" />
+                        <NoteItem isNew placeholder="Novo link" />
+
                     </Section>
 
                 </Form>
