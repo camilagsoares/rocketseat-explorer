@@ -1,6 +1,9 @@
 import { Container, Form } from './styles';
 import { Header } from '../../components/Header';
 import { Input } from '../../components/Input';
+import { Textarea } from '../../components/Textarea';
+import { NoteItem } from '../../components/NoteItem';
+import { Section } from '../../components/Section';
 
 function New() {
 
@@ -17,7 +20,12 @@ function New() {
 
                     <Input placeholder="Título" />
 
-                    
+                    <Textarea  placeholder="Observações" />
+
+                    <Section title="Links úteis">
+                        <NoteItem />
+                    </Section>
+
                 </Form>
             </main>
         </Container>
