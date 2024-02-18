@@ -1,8 +1,9 @@
 require("express-async-errors")
 const AppError = require('./utils/AppError')
 const migrationsRun = require("./database/sqlite/migrations");
-const uploadConfig = require('./configs/upload');
+const { UPLOADS_FOLDER } = require('./configs/upload');
 const cors = require('cors');
+const morgan = require('morgan')
 
 const express = require('express')
 
@@ -14,9 +15,10 @@ app.use(cors())
 const PORT = 3000;
 
 app.use(express.json())
+app.use(morgan('dev'))
 app.use(routes);
 
-app.use("/files", express.static(uploadConfig))
+app.use("/files", express.static(UPLOADS_FOLDER))
 
 app.use((error, request, response, next) => {
 
@@ -33,7 +35,7 @@ app.use((error, request, response, next) => {
         status: "error",
         message: "Internal server error"
     })
-});
+}); 
 
 app.listen(PORT, () => console.log(`Server is running ${PORT}`));
 

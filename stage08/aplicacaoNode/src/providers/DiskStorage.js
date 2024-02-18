@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const uploadConfig = require('../configs/upload');
+const uploadConfig = require("../../src/configs/upload");
 
 class DiskStorage {
     async saveFile(file) {
@@ -18,11 +18,11 @@ class DiskStorage {
             await fs.promises.stat(filePath);
         }
         catch {
-            return;
+            return; 
         }
 
         await fs.promises.unlink(filePath);
     }
 }
-
+ 
 module.exports = DiskStorage;
