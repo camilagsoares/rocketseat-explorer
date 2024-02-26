@@ -18,6 +18,7 @@ function AuthProvider({ children }) {
             localStorage.setItem("@rocketnotes:token", token)
 
             api.defaults.headers.common['Authorization'] = `Bearer ${token}`
+
             setData({ user, token })
 
         } catch (error) {
@@ -38,13 +39,40 @@ function AuthProvider({ children }) {
         setData({})
     }
 
+    async function updateProfile({ user, avatarFile }) {
+        try {
+
+            if (avatarFile) {
+                const fileUploadForm = new FormData()
+                fileUploadForm.append("avatar", avatarFile)
+
+                const response = await api.patch("/users/avatar", fileUploadForm)
+
+                user.avatar = response.data.avatar;
+            }
+
+            await api.put(`/users/${data.user.id}`, user) // eu tinha esquecido de passar entao
+            localStorage.setItem("@rocketnotes:user", JSON.stringify(user))
+
+            setData({ user, token: data.token })
+
+            alert("Perfil atualizado")
+        }
+        catch (error) {
+            if (error.response) {
+                alert(error.response.data.message);
+            } else {
+                alert("Não foi possível atualizar o perfil.");
+            }
+        }
+    }
+
     useEffect(() => {
         const token = localStorage.getItem("@rocketnotes:token")
         const user = localStorage.getItem("@rocketnotes:user")
 
         if (token && user) {
             api.defaults.headers.common['Authorization'] = `Bearer ${token}`
-
 
             setData({
                 token,
@@ -57,8 +85,9 @@ function AuthProvider({ children }) {
     return (
         <AuthContext.Provider value={{
             signIn,
-            user: data.user,
-            signOut
+            signOut,
+            updateProfile,
+            user: data.user
         }}>
             {children}
         </AuthContext.Provider>
