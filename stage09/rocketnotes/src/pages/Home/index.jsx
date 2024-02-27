@@ -8,7 +8,7 @@ import { Note } from "../../components/Note"
 import { useState, useEffect } from 'react';
 import { api } from '../../services/api';
 import { useAuth } from '../../hooks/auth';
-
+import { useNavigate } from 'react-router-dom';
 
 export function Home() {
 
@@ -18,8 +18,14 @@ export function Home() {
     const [notes, setNotes] = useState([])
 
     const { user } = useAuth();
+    const navigate = useNavigate()
 
     function handleTagSelected(tagName) {
+
+        if (tagName === "all") {
+            return setTagsSelected([])
+        }
+
         const alreadySelected = tagsSelected.includes(tagName)
 
         if (alreadySelected) {
@@ -31,6 +37,10 @@ export function Home() {
         }
 
 
+    }
+
+    function handleDetails(id) {
+        navigate(`/details/${id}`)
     }
 
     useEffect(() => {
@@ -45,13 +55,13 @@ export function Home() {
 
 
     useEffect(() => {
-        async function fetchNotes(){
-          const response = await api.get(`/notes?user_id=${user.id}&title=${search}&tags=${tagsSelected}`);    
-          setNotes(response.data.notesWithTags); 
+        async function fetchNotes() {
+            const response = await api.get(`/notes?user_id=${user.id}&title=${search}&tags=${tagsSelected}`);
+            setNotes(response.data.notesWithTags);
         }
-    
+
         fetchNotes()
-      },[tagsSelected, search]) 
+    }, [tagsSelected, search])
 
     return (
         <Container>
@@ -91,7 +101,7 @@ export function Home() {
             <Search>
                 <Input
                     placeholder="Pesquisar pelo título"
-                    onChange={() => setSearch(e.target.value)}
+                    onChange={(e) => setSearch(e.target.value)}
                 />
             </Search>
 
@@ -101,6 +111,7 @@ export function Home() {
                         <Note
                             key={String(note.id)}
                             data={note}
+                            onClick={() => handleDetails(note.id)}
                         />
                     ))
 
