@@ -17,7 +17,16 @@ function Details() {
   const navigate = useNavigate()
 
   function handleBack() {
-    navigate("/")
+    navigate(-1)
+  }
+
+  async function handleRemove() {
+    const confirm = window.confirm("Deseja realmente remover a nota?")
+
+    if (confirm) {
+      await api.delete(`/notes/${params.id}`)
+      navigate(-1)
+    }
   }
 
 
@@ -39,7 +48,10 @@ function Details() {
         <main>
           <Content>
 
-            <ButtonText title="Excluir nota" />
+            <ButtonText
+              title="Excluir nota"
+              onClick={handleRemove}
+            />
 
             <h1>{data.title}</h1>
 
