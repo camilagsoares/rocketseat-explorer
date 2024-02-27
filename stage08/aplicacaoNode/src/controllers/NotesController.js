@@ -31,7 +31,7 @@ class NotesController {
 
         await knex("tags").insert(tagsInsert);
 
-        response.json({message: "Nota criada"});
+        response.json({ message: "Nota criada" });
 
     }
 
@@ -58,9 +58,9 @@ class NotesController {
     }
 
     async index(request, response) {
-        const { title, tags } = request.query;
+        const { title, tags, user_id } = request.query;
 
-        const user_id = request.user.id;
+        // const { user_id } = request.params;
 
         let notes;
 

@@ -32,7 +32,7 @@ function Profile() {
         }
 
         const sessionUpdated = Object.assign(user, session, avatarFile)
-        console.log(user)
+        // console.log(user)
         await updateProfile({ user: sessionUpdated })
     }
 

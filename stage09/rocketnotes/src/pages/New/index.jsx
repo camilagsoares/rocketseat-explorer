@@ -14,7 +14,7 @@ import { useAuth } from '../../hooks/auth';
 
 function New() {
     const { user } = useAuth();
-    console.log(user.id);
+    // console.log(user.id);
 
     const [title, setTitle] = useState("")
     const [description, setDescription] = useState("")
@@ -52,13 +52,14 @@ function New() {
         }
 
 
+        if (newLink) {
+            return alert("Você deixou um link no campo para adicionar mas não clicou em adicionar. Clique para adicionar ou deixe o campo vazio")
+        }
+
         if (newTag) {
             return alert("Você deixou uma tag no campo para adicionar mas não clicou em adicionar. Clique para adicionar ou deixe o campo vazio")
         }
 
-        if (newLink) {
-            return alert("Você deixou um link no campo para adicionar mas não clicou em adicionar. Clique para adicionar ou deixe o campo vazio")
-        }
 
         await api.post(`/notes/${user.id}`, {
             title,

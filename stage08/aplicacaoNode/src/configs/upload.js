@@ -12,13 +12,14 @@ const MULTER = {
             const fileHash = crypto.randomBytes(10).toString("hex");
             const fileName = `${fileHash}-${file.originalname}`;
 
+            console.log(fileName)
             return callback(null, fileName)
         }
     })
 }
 
-module.exports = { 
-    TMP_FOLDER, 
+module.exports = {
+    TMP_FOLDER,
     UPLOADS_FOLDER,
-    MULTER 
+    MULTER
 } 
