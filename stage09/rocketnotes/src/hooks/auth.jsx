@@ -61,7 +61,8 @@ function AuthProvider({ children }) {
         catch (error) {
             if (error.response) {
                 alert(error.response.data.message);
-            } else {
+            } 
+            else {
                 alert("Não foi possível atualizar o perfil.");
             }
         }
