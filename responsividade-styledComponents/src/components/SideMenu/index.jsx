@@ -8,9 +8,11 @@ export function SideMenu({ menuIsOpen, onCloseMenu }) {
       <Header>
         <Title><CheckCircle /> e-Tasks</Title>
 
-        <Button onClick={onCloseMenu}>
-          <X />
-        </Button>
+        {menuIsOpen &&
+          <Button onClick={onCloseMenu}>
+            <X />
+          </Button>
+        }
       </Header>
 
       <Nav>
