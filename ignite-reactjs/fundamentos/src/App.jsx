@@ -1,10 +1,14 @@
+import Post from "./Post"
 
-
-function App() {
+export function App() {
 
   return (
-    <h1>Hello world</h1>
+    <>
+      <Post author="Diego" content="lorem" />
+      <Post author="Camila" content="lorem ipsum" />
+
+    </>
   )
 }
 
-export default App
+
