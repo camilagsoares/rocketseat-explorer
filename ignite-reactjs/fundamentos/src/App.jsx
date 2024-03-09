@@ -36,7 +36,7 @@ export function App() {
       ],
       publishedAt: new Date('2024-03-7 20:00:00')
     }
-    
+
   ]
 
   return (
@@ -46,9 +46,10 @@ export function App() {
         <Sidebar />
         <main>
           {
-            posts.map((post, key) => {
+            posts.map((post) => {
               return (
                 <Post
+                  key={post.id}
                   author={post.author}
                   content={post.content}
                   publishedAt={post.publishedAt}
