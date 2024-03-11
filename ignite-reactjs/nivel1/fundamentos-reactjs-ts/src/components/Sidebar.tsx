@@ -12,7 +12,7 @@ export function Sidebar() {
             />
 
             <div className={styles.profile}>
-              <Avatar src="https://github.com/camilagsoares.png" />
+                <Avatar src="https://github.com/camilagsoares.png" />
                 <strong>Camila Soares</strong>
                 <span>Web Developer</span>
             </div>
@@ -20,7 +20,6 @@ export function Sidebar() {
             <footer>
                 <a href="#">
                     <PencilLine size={20} />
-
                     Editar seu perfil
                 </a>
             </footer>
